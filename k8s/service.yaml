@@ -3,11 +3,14 @@ kind: Service
 metadata:
   name: food-app
   namespace: argo-demo
+  labels:
+    app.kubernetes.io/name: food-app
 spec:
   type: NodePort
   selector:
     app.kubernetes.io/name: food-app
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: http
+    - name: http
+      protocol: TCP
+      port: 80         # Service port
+      targetPort: 8000 # Container port
