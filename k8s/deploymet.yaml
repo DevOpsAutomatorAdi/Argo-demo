@@ -16,10 +16,8 @@ spec:
         app.kubernetes.io/name: food-app
     spec:
       containers:
-      - name: food-app
-        image: aadityasirsam/foodapplication:v1
-        ports:
-          - name: tcp
-            containerPort: 8000
-~
-
+        - name: food-app
+          image: aadityasirsam/foodapplication:v1
+          ports:
+            - name: tcp
+              containerPort: 8000
